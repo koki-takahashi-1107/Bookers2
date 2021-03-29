@@ -10,9 +10,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @book = Book.new
     @books = @user.books
+    @newbook = Book.new
   end
 
   def index
+    @user = current_user
     @users = User.all
     @book = Book.new
   end
